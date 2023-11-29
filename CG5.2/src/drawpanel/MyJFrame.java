@@ -90,8 +90,8 @@ public class MyJFrame extends javax.swing.JFrame {
 //        gr.setColor(Color.ORANGE);
 //        gr.fillOval(mx, my, image.figureWidth, image.figureHeight);
 
-        image.figureHeight = image.img.getHeight(rootPane);
-        image.figureWidth = image.img.getWidth(rootPane);
+//        image.figureHeight = image.img.getHeight(rootPane);
+//        image.figureWidth = image.img.getWidth(rootPane);
         gr.drawImage(image.img, mx, my, rootPane);
     }
 

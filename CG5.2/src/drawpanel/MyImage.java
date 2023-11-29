@@ -3,6 +3,7 @@ package drawpanel;
 import java.awt.Image;
 import java.io.File;
 import java.io.IOException;
+import java.util.Objects;
 import java.util.Random;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -21,12 +22,15 @@ public class MyImage {
     double i = 100;
     double j = 100;
     
-    int figureHeight = 50;
-    int figureWidth = 50;
+    int figureHeight = 80;
+    int figureWidth = 140;
 
     public MyImage() {
         try {
-            this.img = ImageIO.read(new File("src/pictures/0.png"));
+//            this.img = ImageIO.read(new File("src/pictures/0.png"));
+//            this.img  = ImageIO.read(getClass().getClassLoader().getResource("pictures/0.png"));
+            this.img  = ImageIO.read(Objects.requireNonNull(getClass().getClassLoader()
+                    .getResource("pictures/0.png")));
         } catch (IOException ex) {
             Logger.getLogger(MyImage.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -51,7 +55,9 @@ public class MyImage {
         Random r = new Random();
         r.nextInt(7);
         try {
-            this.img = ImageIO.read(new File("src/pictures/"+r.nextInt(6)+".png"));
+//            this.img = ImageIO.read(new File("src/pictures/"+r.nextInt(6)+".png"));
+            this.img  = ImageIO.read(Objects.requireNonNull(getClass().getClassLoader()
+                    .getResource("pictures/"+r.nextInt(6)+".png")));
         } catch (IOException ex) {
             Logger.getLogger(MyImage.class.getName()).log(Level.SEVERE, null, ex);
         }
